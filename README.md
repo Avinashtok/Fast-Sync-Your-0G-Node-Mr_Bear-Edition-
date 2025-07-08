@@ -22,7 +22,7 @@ Storage Nodes manage and serve data, unlike Validator Nodes that focus on blockc
 
 # 🖥️ <span style="font-family: 'Poppins', sans-serif;">System Requirements</span>
 
-![System Requirements](https://github.com/user-attachments/assets/6f06b201-c4b1-4671-b3e1-bf1e49cb5182)
+![System Requirements]([https://github.com/user-attachments/assets/6f06b201-c4b1-4671-b3e1-bf1e49cb5182](https://github.com/Avinashtok/README/blob/main/ChatGPT%20Image%20Jul%208%2C%202025%2C%2010_11_14%20AM.png))
 
 # ⚙️ <span style="font-family: 'Poppins', sans-serif;">Pre-Requirements</span>
 
