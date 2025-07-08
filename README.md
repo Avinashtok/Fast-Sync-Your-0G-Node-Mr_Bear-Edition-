@@ -1,63 +1,63 @@
-# Fast-Sync-Your-0G-Node-Mr_Bear-Edition-
-A simple guide to help you run, stop, and fast-sync your 0G Storage Node using snapshots. Ideal for those looking to avoid syncing from scratch.  🔧 Includes:  📈 Snapshot-based sync from block 3514016  🛠️ Systemd commands for start/stop  📁 Log monitoring &amp; troubleshooting  📬 Telegram Support: @Mrr_Bear .
-<div align="left">
+# 🚀 Fast Sync Your 0G Node - Mr\_Bear Edition
 
-# <span style="font-family: 'Poppins', sans-serif;">📘 <strong>Introduction</strong></span>
+A simple guide to help you run, stop, and fast-sync your 0G Storage Node using snapshots. Ideal for those looking to avoid syncing from scratch.
 
-</div>
+🔧 **Includes:**
+
+* 📈 Snapshot-based sync from block `3514016`
+* 🛠️ Systemd commands for start/stop
+* 📁 Log monitoring & troubleshooting
+* 📬 Telegram Support: [@Mrr\_Bear](https://t.me/Mrr_Bear)
 
 ---
 
-### 💽 <span style="font-family: 'Poppins', sans-serif;">Storage Nodes:</span>
+## 📘 Introduction
+
+### 💽 Storage Nodes:
 
 Storage Nodes manage and serve data, unlike Validator Nodes that focus on blockchain security. They ensure persistence and availability for long-term data such as training datasets or large AI models. Running one helps decentralize and distribute 0G data effectively.
 
-<div align="center">
+---
 
-# 👨‍💻 <span style="font-family: 'Poppins', sans-serif;">0G Storage Node Guide by MrBear</span> 👨‍💻
-
-</div>
+## 👨‍💻 0G Storage Node Guide by MrBear
 
 ---
 
-# 🖥️ <span style="font-family: 'Poppins', sans-serif;">System Requirements</span>
+## 🖥️ System Requirements
 
-![System Requirements]([!## 📊 VPS/PC Specs Overview
+![System Requirements](https://raw.githubusercontent.com/Avinashtok/README/main/Screenshot%202025-07-08%20103325.png)
 
-(![Sync Step](https://raw.githubusercontent.com/Avinashtok/README/main/Screenshot%202025-07-08%20103325.png))
+---
 
-# 📦 ** Prerequisites  **
-**Before setting up your storage node:
+## 📦 Prerequisites
+
+Before setting up your storage node:
 
 * 📜 Understand that 0G Storage Nodes interact with on-chain smart contracts for blob root confirmation and PoRA (Proof of Random Access) mining.
+* 📄 Refer to the official documentation for deployed contract addresses: [0G Testnet Overview](https://docs.0g.ai/developer-hub/testnet/testnet-overview)
+* 🗄️ Storage Note: Nodes may consume up to 130 GB per day. For uninterrupted 24-hour operation, it's advised to have at least 1 TB of disk space.
+* ⚙️ For best results and fast transactions, always prefer official RPC endpoints listed in 0G documentation.
 
-*📄 Refer to the official documentation for deployed contract addresses: 0G Testnet Overview
+---
 
-*🗄️ Storage Note: Nodes may consume up to 130 GB per day. For uninterrupted 24-hour operation, it's advised to have at least 1 TB of disk space.
+## ⚙️ Pre-Requirements
 
-*  ⚙️ For best results and fast transactions, always prefer official RPC endpoints listed in 0G documentation.
-# ⚙️ <span style="font-family: 'Poppins', sans-serif;">Pre-Requirements</span>
+* 🌐 Add 0G-Galileo-Testnet chain: [testnet-information](https://docs.0g.ai/run-a-node/testnet-information)
+* 💧 Take faucet: [faucet.0g.ai](https://faucet.0g.ai/)
 
-* 🌐 Add 0G-Galileo-Testnet chain: [https://docs.0g.ai/run-a-node/testnet-information](https://docs.0g.ai/run-a-node/testnet-information)
-* 💧 Take faucet: [https://faucet.0g.ai/](https://faucet.0g.ai/)
+---
 
-# 📦 Install Dependencies
+## 📦 Install Dependencies
 
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y
+sudo apt install curl iptables build-essential git wget lz4 jq make cmake gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip screen ufw -y
 ```
 
-```bash
-sudo apt install curl iptables build-essential git wget lz4 jq make cmake gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev screen ufw -y
-```
-
-* 🦀 Install rustup
+### 🦀 Install rustup
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh
-```
-
-```bash
 source $HOME/.cargo/env
 ```
 
@@ -67,7 +67,7 @@ source $HOME/.cargo/env
 rustc --version
 ```
 
-* 🟢 Install Go:
+### 🟢 Install Go
 
 ```bash
 wget https://go.dev/dl/go1.24.3.linux-amd64.tar.gz && \
@@ -84,33 +84,35 @@ source ~/.bashrc
 go version
 ```
 
-# 🧾 Clone the Repository
+---
+
+## 🧾 Clone the Repository
 
 ```bash
 git clone https://github.com/0glabs/0g-storage-node.git
-```
-
-```bash
 cd 0g-storage-node && git checkout v1.0.0 && git submodule update --init
 ```
 
-# ⚙️ Build in Release Mode
+---
+
+## ⚙️ Build in Release Mode
 
 ```bash
 cargo build --release
 ```
 
-# 🧰 Re run For Double Check Release--
+🧰 Double-check Release Mode:
 
-    cargo build --release
+```bash
+cargo build --release
+```
 
-# 🧰 Set Configurations
+---
+
+## 🧰 Set Configurations
 
 ```bash
 rm -rf $HOME/0g-storage-node/run/config.toml
-```
-
-```bash
 curl -o $HOME/0g-storage-node/run/config.toml https://raw.githubusercontent.com/Mayankgg01/0G-Storage-Node-Guide/main/config.toml
 ```
 
@@ -122,13 +124,17 @@ nano $HOME/0g-storage-node/run/config.toml
 
 ![Edit Config](https://github.com/user-attachments/assets/a513812f-177e-4a74-83a9-1548c98f4556)
 
-# 🌐 Configure Custom RPC
+---
 
-Choose RPC from: [https://www.astrostake.xyz/0g-status](https://www.astrostake.xyz/0g-status) and edit `config.toml`
+## 🌐 Configure Custom RPC
+
+Choose RPC from: [AstroStake RPC Status](https://www.astrostake.xyz/0g-status) and edit `config.toml`
 
 ![Custom RPC](https://github.com/user-attachments/assets/44b682a5-45ce-4fc8-8c3a-7f2355f3b9ac)
 
-# 🔧 Create Systemd Service
+---
+
+## 🔧 Create Systemd Service
 
 ```bash
 sudo tee /etc/systemd/system/zgs.service > /dev/null <<EOF
@@ -155,47 +161,49 @@ sudo systemctl enable zgs
 sudo systemctl start zgs
 ```
 
-# 📥 <div align="center">Download Snapshot For Faster Sync</div>
+---
 
-📈 Download Snapshot For Faster Sync 🚀 -by-Mrr\_Bear (Avinash Kumar)
+## 📥 Download Snapshot For Faster Sync
 
-⚕️ This Snapshot will help u to sync Faster & it will start from Block -- 3514016
+📈 Sync starts from block `3514016`
 
-🛠️ Installation Instructions
+### 🛠️ Snapshot Instructions
 
-1. 🔴 Stop The Node
+1. 🔴 Stop Node:
 
 ```bash
 sudo systemctl stop zgs
 ```
 
-2. 🧹 Delete existing flow\_db
+2. 🧹 Delete old database:
 
 ```bash
 rm -rf $HOME/0g-storage-node/run/db/flow_db
 ```
 
-3. ⬇️ Download the Snapshot
+3. ⬇️ Download Snapshot:
 
 ```bash
 wget -O flow_db.tar.gz https://github.com/Avinashtok/0g-fast-sync/releases/download/backup-3507655/flow_db-3507655.tar.gz
 ```
 
-4. 📦 Extract the Snapshot
+4. 📦 Extract:
 
 ```bash
 tar -xzvf $HOME/0g-storage-node/run/db/flow_db.tar.gz -C $HOME/0g-storage-node/run/db/
 ```
 
-5. 🔄 Restart the Node
+5. 🔄 Restart Node:
 
 ```bash
 sudo systemctl restart zgs
 ```
 
-🔍 Managing Logs
+---
 
-☑️ Check Node Status
+## 📊 Monitor Your Node
+
+### ✅ Check Node Status:
 
 ```bash
 sudo systemctl status zgs
@@ -203,14 +211,13 @@ sudo systemctl status zgs
 
 ![Sync Monitor](https://github.com/Avinashtok/README/raw/main/Screenshot%202025-07-08%20083738.png)
 
-
-👁️🔍 View Logs
+### 🔍 View Logs:
 
 ```bash
 tail -f ~/0g-storage-node/run/log/zgs.log.$(TZ=UTC date +%Y-%m-%d)
 ```
 
-🧪 Monitor Sync Progress
+### 🧪 Watch Sync Progress:
 
 ```bash
 while true; do \
@@ -225,25 +232,35 @@ done
 
 ![Snapshot Screenshot](https://github.com/Avinashtok/README/raw/main/Screenshot%202025-07-08%20072343.png)
 
+---
+
+## 🧹 How to Clear Data & Restart Your Node 🛠️
+
+*If your VPS storage is running low or cluttered, follow these to clean up:
+
+```bash
+sudo systemctl stop zgs
+```
+```bash
+sudo systemctl disable zgs
+```
+```bash
+sudo rm /etc/systemd/system/zgs.service
+```
+```bash
+rm -rf $HOME/0g-storage-node
+```
 
 ---
 
-✅ Done. For Help DM [@Mrr\_Bear](https://t.me/Mrr_Bear) on Telegram or open an issue.
+## 🔔 Additional Notes
 
-🔔 Additional Notes
-🔐 Security:
-Guard your miner_key like it’s the secret sauce! Anyone who snags it can hijack your node and swipe your shiny mining loot 🎩💰. Lock it down tight! 🏰🔒
+🔐 **Security**: Guard your `miner_key` like treasure 🏰🔑. If exposed, your rewards and control can be stolen! 💸
 
-🌐 Network Juju:
-Make sure your node’s rocking a steady internet groove ⚡ and that all the mystical ports 🔮 are open so it can gossip with other nodes.
+🌐 **Network**: Keep internet stable and ports open so your node can communicate 🔌🌍
 
-👀 Node Radar:
-Keep an eye on your node’s logs 📜 and how hungry it is for resources 🖥️. A happy node means smooth syncing and lots of good vibes! ✨
+👀 **Monitoring**: Track logs and resource use. A smooth-running node = optimal sync 🖥️✨
 
-🔄 Stay Zesty:
-Be on the lookout for 0G Storage Node updates 🆕. Follow the sacred scrolls (docs) to keep your setup spick and span 🧹.
+🔄 **Stay Updated**: Always check for latest software updates and follow [official documentation](https://docs.0g.ai/).
 
-🌟 Remember:
-Running a storage node isn’t just work, it’s leveling up the entire 0G universe 🚀🌌. You’re helping decentralize the network, flexing its resilience 💪, and cashing in those sweet rewards 💸!
-
-***Remember: Running a storage node is a valuable contribution to the 0G network. You'll be helping to maintain its decentralization and robustness while earning rewards for your efforts.
+🌟 **Contribution**: Running a node supports decentralization 💪 and rewards you along the way 🚀💰
