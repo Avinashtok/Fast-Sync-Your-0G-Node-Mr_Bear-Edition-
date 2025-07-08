@@ -24,7 +24,7 @@ Storage Nodes manage and serve data, unlike Validator Nodes that focus on blockc
 
 ![System Requirements]([!## 📊 VPS/PC Specs Overview
 
-![image](https://github.com/user-attachments/assets/6f06b201-c4b1-4671-b3e1-bf1e49cb5182)
+![image](![Sync Step](https://raw.githubusercontent.com/Avinashtok/README/main/Screenshot%202025-07-08%20103325.png))
 
 # ⚙️ <span style="font-family: 'Poppins', sans-serif;">Pre-Requirements</span>
 
