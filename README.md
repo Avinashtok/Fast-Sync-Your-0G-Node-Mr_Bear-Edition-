@@ -26,6 +26,16 @@ Storage Nodes manage and serve data, unlike Validator Nodes that focus on blockc
 
 (![Sync Step](https://raw.githubusercontent.com/Avinashtok/README/main/Screenshot%202025-07-08%20103325.png))
 
+# 📦 ** Prerequisites  **
+**Before setting up your storage node:
+
+* 📜 Understand that 0G Storage Nodes interact with on-chain smart contracts for blob root confirmation and PoRA (Proof of Random Access) mining.
+
+*📄 Refer to the official documentation for deployed contract addresses: 0G Testnet Overview
+
+*🗄️ Storage Note: Nodes may consume up to 130 GB per day. For uninterrupted 24-hour operation, it's advised to have at least 1 TB of disk space.
+
+*  ⚙️ For best results and fast transactions, always prefer official RPC endpoints listed in 0G documentation.
 # ⚙️ <span style="font-family: 'Poppins', sans-serif;">Pre-Requirements</span>
 
 * 🌐 Add 0G-Galileo-Testnet chain: [https://docs.0g.ai/run-a-node/testnet-information](https://docs.0g.ai/run-a-node/testnet-information)
@@ -89,6 +99,10 @@ cd 0g-storage-node && git checkout v1.0.0 && git submodule update --init
 ```bash
 cargo build --release
 ```
+
+# 🧰 Re run For Double Check Release--
+
+    cargo build --release
 
 # 🧰 Set Configurations
 
@@ -187,7 +201,8 @@ sudo systemctl restart zgs
 sudo systemctl status zgs
 ```
 
-![Snapshot Step](./Screenshot%202025-07-08%20072158.png)
+![Sync Monitor](https://github.com/Avinashtok/README/raw/main/Screenshot%202025-07-08%20083738.png)
+
 
 👁️🔍 View Logs
 
@@ -208,10 +223,27 @@ sleep 5; \
 done
 ```
 
-![Download Snapshot](Screenshot%202025-07-08%20072343.png)
+![Snapshot Screenshot](https://github.com/Avinashtok/README/raw/main/Screenshot%202025-07-08%20072343.png)
+
 
 ---
 
 ✅ Done. For Help DM [@Mrr\_Bear](https://t.me/Mrr_Bear) on Telegram or open an issue.
 
-Happy Building! 🚀
+🔔 Additional Notes
+🔐 Security:
+Guard your miner_key like it’s the secret sauce! Anyone who snags it can hijack your node and swipe your shiny mining loot 🎩💰. Lock it down tight! 🏰🔒
+
+🌐 Network Juju:
+Make sure your node’s rocking a steady internet groove ⚡ and that all the mystical ports 🔮 are open so it can gossip with other nodes.
+
+👀 Node Radar:
+Keep an eye on your node’s logs 📜 and how hungry it is for resources 🖥️. A happy node means smooth syncing and lots of good vibes! ✨
+
+🔄 Stay Zesty:
+Be on the lookout for 0G Storage Node updates 🆕. Follow the sacred scrolls (docs) to keep your setup spick and span 🧹.
+
+🌟 Remember:
+Running a storage node isn’t just work, it’s leveling up the entire 0G universe 🚀🌌. You’re helping decentralize the network, flexing its resilience 💪, and cashing in those sweet rewards 💸!
+
+***Remember: Running a storage node is a valuable contribution to the 0G network. You'll be helping to maintain its decentralization and robustness while earning rewards for your efforts.
