@@ -278,7 +278,8 @@ DONE!!
 
 ## 📋FAQ-1 ( Process for Local Device & how to restart on next day!)
 
-* So, For local PC All the process is same as VPS: You have to start from [⚙️ Pre-Requirements](https://github.com/Avinashtok/Fast-Sync-Your-0G-Node-Mr_Bear-Edition-#-pre-requirements)
+* So, For local PC All the process is same as VPS: You have to start from [Pre-Requirements](#pre-requirements)
+(https://github.com/Avinashtok/Fast-Sync-Your-0G-Node-Mr_Bear-Edition-#-pre-requirements)
 
 
 
