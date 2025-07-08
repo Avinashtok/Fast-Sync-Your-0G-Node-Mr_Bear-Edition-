@@ -250,7 +250,51 @@ sudo rm /etc/systemd/system/zgs.service
 ```bash
 rm -rf $HOME/0g-storage-node
 ```
+# Stop & Delete the service
 
+```
+sudo systemctl stop zgs
+```
+
+```
+sudo systemctl disable zgs
+sudo rm /etc/systemd/system/zgs.service
+rm -rf $HOME/0g-storage-node
+```
+
+
+
+## Explorer & Useful Webs
+
+* Explorer- (View your txs - Paste Your Address): https://chainscan-galileo.bangcode.id/ OR https://chainscan-galileo.0g.ai/
+
+* View Miner Details- (Add your wallet address at the end of the link): https://storagescan-galileo.0g.ai/miner/
+
+DONE!!
+
+
+
+
+
+## 📋FAQ-1 ( Process for Local Device & how to restart on next day!)
+
+* So, For local PC All the process is same as VPS: You have to start from [Pre-Requirements 🛠](https://github.com/Avinashtok/Fast-Sync-Your-0G-Node-Mr_Bear-Edition-#pre-requirements-)
+
+
+* 👉Next Day process:
+                  
+- Just Open your wsl/terminal and run
+
+```
+sudo systemctl restart zgs
+```
+
+The service/node will be start after that:
+
+
+
+
+<div align="center">
 ---
 
 ## 🔔 Additional Notes
