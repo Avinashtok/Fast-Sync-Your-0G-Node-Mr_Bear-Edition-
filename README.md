@@ -184,20 +184,11 @@ rm -rf $HOME/0g-storage-node/run/db/flow_db
 3. ⬇️ Download Snapshot:
 
 ```bash
-wget -O flow_db.tar.gz https://github.com/Avinashtok/0g-fast-sync/releases/download/backup-3507655/flow_db-3507655.tar.gz
+wget https://github.com/Mayankgg01/0G-Storage-Node-Guide/releases/download/v1.0/flow_db.tar.gz \
+  -O $HOME/0g-storage-node/run/db/flow_db.tar.gz && \
+  tar -xzvf $HOME/0g-storage-node/run/db/flow_db.tar.gz -C $HOME/0g-storage-node/run/db/
 
 
-```
-```bash
-mv ~/0g-storage-node/flow_db.tar.gz $HOME/0g-storage-node/run/db/
-```
-
-#Then
-
-4. 📦 Extract:
-
-```bash
-tar -xzvf $HOME/0g-storage-node/run/db/flow_db.tar.gz -C $HOME/0g-storage-node/run/db/
 ```
 
 5. 🔄 Restart Node:
