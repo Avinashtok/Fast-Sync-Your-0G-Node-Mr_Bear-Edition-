@@ -4,7 +4,7 @@ A simple guide to help you run, stop, and fast-sync your 0G Storage Node using s
 
 🔧 **Includes:**
 
-* 📈 Snapshot-based sync from block `3514016`
+* 📈 Snapshot-based sync from block `3562700`
 * 🛠️ Systemd commands for start/stop
 * 📁 Log monitoring & troubleshooting
 * 📬 Telegram Support: [@Mrr\_Bear](https://t.me/Mrr_Bear)
@@ -165,7 +165,7 @@ sudo systemctl start zgs
 
 ## 📥 Download Snapshot For Faster Sync
 
-📈 Sync starts from block `3514016`
+📈 Sync starts from block `3562700`
 
 ### 🛠️ Snapshot Instructions
 
@@ -185,7 +185,14 @@ rm -rf $HOME/0g-storage-node/run/db/flow_db
 
 ```bash
 wget -O flow_db.tar.gz https://github.com/Avinashtok/0g-fast-sync/releases/download/backup-3507655/flow_db-3507655.tar.gz
+
+
 ```
+```bash
+mv ~/0g-storage-node/flow_db.tar.gz $HOME/0g-storage-node/run/db/
+```
+
+#Then
 
 4. 📦 Extract:
 
